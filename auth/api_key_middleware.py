@@ -1,4 +1,4 @@
-from fastapi import Request, HTTPException
+from fastapi import Request
 from fastapi.security.api_key import APIKeyHeader
 from starlette.middleware.base import BaseHTTPMiddleware
 from config.database import API_KEY
@@ -13,5 +13,6 @@ class APIKeyMiddleware(BaseHTTPMiddleware):
             return await call_next(request)
         api_key = request.headers.get(API_KEY_NAME)
         if not api_key or api_key != API_KEY:
-            raise HTTPException(status_code=401, detail="Unauthorized")
+            from starlette.responses import JSONResponse
+            return JSONResponse(status_code=401, content={"detail": "Unauthorized"})
         return await call_next(request)
