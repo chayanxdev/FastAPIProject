@@ -1,0 +1,69 @@
+{
+    "info": {
+        "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "name": "FastAPI Product Management API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get All Products",
+            "request": {
+                "method": "GET",
+                "header": [
+                    { "key": "X-API-KEY", "value": "your-secret-api-key", "type": "text" }
+                ],
+                "url": { "raw": "http://localhost:8000/products", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["products"] }
+            }
+        },
+        {
+            "name": "Get Product by ID",
+            "request": {
+                "method": "GET",
+                "header": [
+                    { "key": "X-API-KEY", "value": "your-secret-api-key", "type": "text" }
+                ],
+                "url": { "raw": "http://localhost:8000/products/1", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["products", "1"] }
+            }
+        },
+        {
+            "name": "Create Product",
+            "request": {
+                "method": "POST",
+                "header": [
+                    { "key": "X-API-KEY", "value": "your-secret-api-key", "type": "text" },
+                    { "key": "Content-Type", "value": "application/json", "type": "text" }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"title\": \"Essence Mascara Lash Princess\",\n  \"description\": \"The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.\",\n  \"category\": \"beauty\",\n  \"price\": 9.99,\n  \"discountPercentage\": 10.48,\n  \"rating\": 2.56,\n  \"stock\": 99,\n  \"tags\": [\"beauty\", \"mascara\"],\n  \"brand\": \"Essence\",\n  \"sku\": \"BEA-ESS-ESS-001\",\n  \"weight\": 4,\n  \"dimensions\": {\n    \"width\": 15.14,\n    \"height\": 13.08,\n    \"depth\": 22.99\n  },\n  \"warrantyInformation\": \"1 week warranty\",\n  \"shippingInformation\": \"Ships in 3-5 business days\",\n  \"availabilityStatus\": \"In Stock\",\n  \"reviews\": [\n    {\n      \"rating\": 3,\n      \"comment\": \"Would not recommend!\",\n      \"date\": \"2025-04-30T09:41:02.053Z\",\n      \"reviewerName\": \"Eleanor Collins\",\n      \"reviewerEmail\": \"eleanor.collins@x.dummyjson.com\"\n    },\n    {\n      \"rating\": 4,\n      \"comment\": \"Very satisfied!\",\n      \"date\": \"2025-04-30T09:41:02.053Z\",\n      \"reviewerName\": \"Lucas Gordon\",\n      \"reviewerEmail\": \"lucas.gordon@x.dummyjson.com\"\n    },\n    {\n      \"rating\": 5,\n      \"comment\": \"Highly impressed!\",\n      \"date\": \"2025-04-30T09:41:02.053Z\",\n      \"reviewerName\": \"Eleanor Collins\",\n      \"reviewerEmail\": \"eleanor.collins@x.dummyjson.com\"\n    }\n  ],\n  \"returnPolicy\": \"No return policy\",\n  \"minimumOrderQuantity\": 48,\n  \"meta\": {\n    \"createdAt\": \"2025-04-30T09:41:02.053Z\",\n    \"updatedAt\": \"2025-04-30T09:41:02.053Z\",\n    \"barcode\": \"5784719087687\",\n    \"qrCode\": \"https://cdn.dummyjson.com/public/qr-code.png\"\n  },\n  \"images\": [\n    \"https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp\"\n  ],\n  \"thumbnail\": \"https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp\"\n}"
+                },
+                "url": { "raw": "http://localhost:8000/products", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["products"] }
+            }
+        },
+        {
+            "name": "Update Product",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    { "key": "X-API-KEY", "value": "your-secret-api-key", "type": "text" },
+                    { "key": "Content-Type", "value": "application/json", "type": "text" }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"title\": \"Updated Product\",\n  \"description\": \"Updated description.\",\n  \"category\": \"beauty\",\n  \"price\": 29.99,\n  \"discountPercentage\": 12.00,\n  \"rating\": 4.5,\n  \"stock\": 50,\n  \"tags\": [\"beauty\", \"mascara\"],\n  \"brand\": \"Essence\",\n  \"sku\": \"BEA-ESS-ESS-002\",\n  \"weight\": 5,\n  \"dimensions\": {\n    \"width\": 16.0,\n    \"height\": 14.0,\n    \"depth\": 23.0\n  },\n  \"warrantyInformation\": \"2 week warranty\",\n  \"shippingInformation\": \"Ships in 2-4 business days\",\n  \"availabilityStatus\": \"In Stock\",\n  \"reviews\": [\n    {\n      \"rating\": 4,\n      \"comment\": \"Pretty good!\",\n      \"date\": \"2025-05-01T09:41:02.053Z\",\n      \"reviewerName\": \"Lucas Gordon\",\n      \"reviewerEmail\": \"lucas.gordon@x.dummyjson.com\"\n    }\n  ],\n  \"returnPolicy\": \"No return policy\",\n  \"minimumOrderQuantity\": 24,\n  \"meta\": {\n    \"createdAt\": \"2025-05-01T09:41:02.053Z\",\n    \"updatedAt\": \"2025-05-01T09:41:02.053Z\",\n    \"barcode\": \"5784719087688\",\n    \"qrCode\": \"https://cdn.dummyjson.com/public/qr-code.png\"\n  },\n  \"images\": [\n    \"https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/2.webp\"\n  ],\n  \"thumbnail\": \"https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail2.webp\"\n}"
+                },
+                "url": { "raw": "http://localhost:8000/products/1", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["products", "1"] }
+            }
+        },
+        {
+            "name": "Delete Product",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    { "key": "X-API-KEY", "value": "your-secret-api-key", "type": "text" }
+                ],
+                "url": { "raw": "http://localhost:8000/products/1", "protocol": "http", "host": ["localhost"], "port": "8000", "path": ["products", "1"] }
+            }
+        }
+    ]
+}
