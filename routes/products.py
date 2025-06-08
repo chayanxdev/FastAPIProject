@@ -144,7 +144,13 @@ def update_product(product_id: int, product: ProductUpdate, db: Session = Depend
     db_product.availability_status = product.availabilityStatus
     db_product.return_policy = product.returnPolicy
     db_product.minimum_order_quantity = product.minimumOrderQuantity
-    db_product.meta = product.meta.model_dump() if product.meta else None
+    # Convert datetime fields in meta to isoformat strings for JSON serialization
+    meta_dict = product.meta.model_dump() if product.meta else None
+    if meta_dict:
+        for key in ["createdAt", "updatedAt"]:
+            if meta_dict.get(key) and hasattr(meta_dict[key], 'isoformat'):
+                meta_dict[key] = meta_dict[key].isoformat()
+    db_product.meta = meta_dict
     db_product.images = product.images
     db_product.thumbnail = product.thumbnail
     # Update dimensions
